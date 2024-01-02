@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.ricky.personcenter.common.BaseResponse;
 import com.ricky.personcenter.common.ErrorCode;
 import com.ricky.personcenter.common.ResultUtils;
-import com.ricky.personcenter.contant.UserConstant;
 import com.ricky.personcenter.error.BusinessException;
 import com.ricky.personcenter.model.entity.User;
 import com.ricky.personcenter.model.request.UserLoginRequest;
@@ -30,6 +29,7 @@ import static com.ricky.personcenter.contant.UserConstant.*;
 @Slf4j
 @RestController
 @RequestMapping("/user")
+@CrossOrigin
 public class UserController {
     @Resource
     private UserService userService;

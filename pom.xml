@@ -34,6 +34,7 @@
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.31</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -55,6 +56,12 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mybatis-spring</artifactId>
+                    <groupId>org.mybatis</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -96,11 +103,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <version>${spring-boot.version}</version>
-            <!-- 把这里给删除就可以打包成功 -->
-            <!--<configuration>
-                <mainClass>com.sun.SSMPApplication</mainClass>
-                <skip>true</skip>
-            </configuration>-->
             <executions>
                 <execution>
                     <id>repackage</id>
