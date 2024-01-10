@@ -7,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TableListener implements ReadListener<XingqiuTableUserInfo> {
 
-
     /**
      * 这个每一条数据解析都会来调用
      *
@@ -15,6 +14,8 @@ public class TableListener implements ReadListener<XingqiuTableUserInfo> {
      */
     @Override
     public void invoke(XingqiuTableUserInfo data, AnalysisContext context) {
+
+        System.out.println(data);
 
     }
 
@@ -25,7 +26,7 @@ public class TableListener implements ReadListener<XingqiuTableUserInfo> {
      */
     @Override
     public void doAfterAllAnalysed(AnalysisContext context) {
-
+        System.out.println("输出已完成");
     }
 
 }

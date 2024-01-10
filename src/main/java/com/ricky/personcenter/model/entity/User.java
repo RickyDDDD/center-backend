@@ -50,6 +50,11 @@ public class User implements Serializable {
     private String phone;
 
     /**
+     * 个人简介
+     */
+    private String profile;
+
+    /**
      * 邮箱
      */
     private String email;
@@ -84,6 +89,11 @@ public class User implements Serializable {
      * 星球编号
      */
     private String planetCode;
+
+    /**
+     * 标签列表
+     */
+    private String tags;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

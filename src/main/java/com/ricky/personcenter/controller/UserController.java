@@ -11,6 +11,7 @@ import com.ricky.personcenter.model.request.UserRegisterRequest;
 import com.ricky.personcenter.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -29,7 +30,8 @@ import static com.ricky.personcenter.contant.UserConstant.*;
 @Slf4j
 @RestController
 @RequestMapping("/user")
-@CrossOrigin
+//解决请求跨域问题，限制前端请求地址（http://localhost:5173/）
+@CrossOrigin(origins = {"http://localhost:5173/"})
 public class UserController {
     @Resource
     private UserService userService;
@@ -116,6 +118,21 @@ public class UserController {
                 .map(user -> userService.getSafetyUser(user))
                 .collect(Collectors.toList());
         return ResultUtils.success(list);
+    }
+
+    /**
+     * 按标签搜索用户
+     *
+     * @param tagNameList 标签名称列表
+     * @return {@link BaseResponse}<{@link List}<{@link User}>>
+     */
+    @GetMapping("/search/tags")
+    public BaseResponse<List<User>> searchByTags(@RequestParam(required = false) List<String> tagNameList){
+        if (CollectionUtils.isEmpty(tagNameList)){
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        List<User> userList = userService.searchUserByTags(tagNameList);
+        return ResultUtils.success(userList);
     }
 
 

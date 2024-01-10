@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.ricky.personcenter.model.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
 * @author Ricky
@@ -39,5 +40,14 @@ public interface UserService extends IService<User> {
      * @param request 请求
      */
     int userLoginOut(HttpServletRequest request);
+
+    /**
+     * 按标签搜索用户
+     *
+     * @param tagNameList 标签列表
+     * @return int
+     */
+    List<User> searchUserByTags(List<String> tagNameList);
+
     User getSafetyUser(User originUser);
 }
