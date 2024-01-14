@@ -13,7 +13,7 @@ public interface UserConstant {
     String USER_LOGIN_STATE = "userLoginState";
 
     /**
-     * 角色权限
+     * 角色权限 0为普通用户 1为管理员
      */
     int DEFAULT_ROLE = 0;
     int ADMIN_ROLE = 1;

@@ -7,6 +7,9 @@ import com.ricky.personcenter.model.entity.User;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+import static com.ricky.personcenter.contant.UserConstant.ADMIN_ROLE;
+import static com.ricky.personcenter.contant.UserConstant.USER_LOGIN_STATE;
+
 /**
 * @author Ricky
 * @description 针对表【user】的数据库操作Service
@@ -50,4 +53,31 @@ public interface UserService extends IService<User> {
     List<User> searchUserByTags(List<String> tagNameList);
 
     User getSafetyUser(User originUser);
+
+    /**
+     * 更新用户信息
+     *
+     * @param user 用户
+     * @return {@link Integer}
+     */
+    Integer updateUser(User user, User loginUser);
+
+    /**
+     * 获取登录用户
+     *
+     * @param request 请求
+     * @return {@link User}
+     */
+    User getLoginUser(HttpServletRequest request);
+
+    /**
+     * 是否为管理员
+     *
+     * @param request 请求
+     * @return boolean
+     */
+     boolean isAdmin(HttpServletRequest request);
+    boolean isAdmin(User loginUser);
+
+
 }

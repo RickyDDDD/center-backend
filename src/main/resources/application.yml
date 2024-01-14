@@ -2,6 +2,9 @@ server:
   port: 8080
   servlet:
     context-path: /api
+    session:
+      cookie:
+        domain: localhost
 spring:
   profiles:
     active: dev
@@ -17,6 +20,7 @@ spring:
   session:
     timeout: 86400
     store-type: redis
+
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
@@ -24,7 +28,7 @@ spring:
   redis:
     port: 6379
     host: localhost
-    database: 0
+    database: 1
 
 
 mybatis-plus:
