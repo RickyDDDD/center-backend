@@ -1,9 +1,9 @@
-package generator.service.impl;
+package com.ricky.personcenter.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.ricky.personcenter.model.entity.Team;
-import generator.service.TeamService;
 import com.ricky.personcenter.mapper.TeamMapper;
+import com.ricky.personcenter.model.entity.Team;
+import com.ricky.personcenter.service.TeamService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 */
 @Service
 public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
-    implements TeamService{
+    implements TeamService {
 
 }
 

@@ -1,7 +1,7 @@
-package generator.service;
+package com.ricky.personcenter.service;
 
-import com.ricky.personcenter.model.entity.UserTeam;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ricky.personcenter.model.entity.UserTeam;
 
 /**
 * @author Ricky

@@ -1,4 +1,4 @@
-package generator.domain;
+package com.ricky.personcenter.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 
