@@ -208,7 +208,7 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team>
         //todo 关联查询已加入队伍的用户信息（可能会耗费性能，建议用自己写sql的方式实现）
         return teamUserVOList;
     }
-
+           
     /**
      * 修改队伍信息
      *
